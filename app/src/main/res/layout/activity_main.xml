@@ -2,13 +2,98 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorPrimary"
+    >
+
+    <TextView
+        android:id="@+id/quastion_TV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="1 + 2 = ?"
+        android:textColor="@color/textColor"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/asnwer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/quastion_TV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/answer_box"
+        android:padding="5dp"
+        android:text="?"
+        android:textColor="@color/textColor"
+        android:textSize="20sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:layout_below="@id/asnwer"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/submit_btn"
+        />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="42"
+        android:id="@+id/btn_A"
+        android:layout_below="@id/submit_btn"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="70dp"
+        />
 
 
 
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="42"
+        android:id="@+id/btn_B"
+        android:layout_below="@id/submit_btn"
+        android:layout_marginTop="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="70dp"
+        />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="42"
+        android:id="@+id/btn_C"
+        android:layout_below="@id/btn_A"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="70dp"
+        />
 
 
 
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="42"
+        android:id="@+id/btn_D"
+        android:layout_below="@id/btn_B"
+        android:layout_marginTop="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="70dp"
+        />
+
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Score: "
+    android:layout_alignParentBottom="true"
+    android:textSize="15sp"
+    />
 
 
 
