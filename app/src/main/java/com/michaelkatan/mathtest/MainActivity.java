@@ -82,7 +82,7 @@ public class MainActivity extends Activity
                     getRandomQuastion();
                     getRandomAnswers();
                     answerTV.setText("?");
-                    scoreTv.setText(rightAnswers + " / " + totalQuastions);
+                    scoreTv.setText("Score: " + rightAnswers + " / " + totalQuastions);
                 }
             }
         });
