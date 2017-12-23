@@ -28,6 +28,13 @@ public class MainActivity extends Activity
     Button btn_C;
     Button btn_D;
 
+    ImageView heart1;
+    ImageView heart2;
+    ImageView heart3;
+    int count = 0;
+
+
+
     ArrayList<Button> answerBtns;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -45,6 +52,10 @@ public class MainActivity extends Activity
         btn_B = findViewById(R.id.btn_B);
         btn_C = findViewById(R.id.btn_C);
         btn_D = findViewById(R.id.btn_D);
+
+        heart1 = findViewById(R.id.heart1);
+        heart2 = findViewById(R.id.heart2);
+        heart3 = findViewById(R.id.heart3);
 
         answerBtns = new ArrayList<>();
         answerBtns.add(btn_A);
@@ -77,15 +88,55 @@ public class MainActivity extends Activity
                         rightAnswers++;
                     } else {
                         Toast.makeText(MainActivity.this, "Wrong Answer...", Toast.LENGTH_SHORT).show();
+                            removeHeart();
+                        if(count == 3)
+                        {
+                            for(int i = 0; i<answerBtns.size(); i++)
+                            {
+                                answerBtns.get(i).setClickable(false);
+                            }
+                            quastionTV.setText("You Lose...");
+                            answerTV.setText("Sorry...");
+                            sumbit_btn.setClickable(false);
+                        }
                     }
 
-                    getRandomQuastion();
-                    getRandomAnswers();
-                    answerTV.setText("?");
-                    scoreTv.setText(rightAnswers + " / " + totalQuastions);
+                    if(count != 3)
+                    {
+                        getRandomQuastion();
+                        getRandomAnswers();
+                        answerTV.setText("?");
+                        scoreTv.setText(rightAnswers + " / " + totalQuastions);
+                    }
                 }
             }
         });
+    }
+
+    private void removeHeart()
+    {
+        count++;
+        switch (count)
+        {
+            case 1:
+            {
+                heart1.setImageResource(R.drawable.emptyheart);
+                break;
+            }
+            case 2:
+            {
+                heart2.setImageResource(R.drawable.emptyheart);
+                break;
+            }
+
+            case 3:
+            {
+                heart3.setImageResource(R.drawable.emptyheart);
+                break;
+
+            }
+
+        }
     }
 
 
